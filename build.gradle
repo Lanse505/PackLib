@@ -26,6 +26,10 @@ minecraft {
 }
 
 repositories {
+    maven {
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
 	maven{
         name 'CraftTweaker'
         url 'http://maven.blamejared.com'
@@ -58,6 +62,7 @@ dependencies {
     deobfCompile "CraftTweaker2:ZenScript:1.12-${crafttweaker_version}"
 	deobfCompile "slimeknights:TConstruct:${minecraft_version}-${tinkers_version}"
     deobfCompile "slimeknights.mantle:Mantle:${mantle_minecraft_version}-${mantle_version}"
+    deobfCompile "ore-excavation:OreExcavation:1.4.140"
 }
 
 processResources {

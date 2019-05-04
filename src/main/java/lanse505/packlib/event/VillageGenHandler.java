@@ -30,7 +30,7 @@ public class VillageGenHandler {
     MapGenVillage villageGenerator = new MapGenVillage(villageValues) {
         @Override
         protected StructureStart getStructureStart(int chunkX, int chunkZ) {
-            return new Start(this.world, this.rand, chunkX, chunkZ, PLConfigs.PLConfig.villageValues.size);
+            return new VillageGenHandler.Start(this.world, this.rand, chunkX, chunkZ, PLConfigs.PLConfig.villageValues.size);
         }
     };
 
@@ -56,7 +56,7 @@ public class VillageGenHandler {
             super(x, z);
             List<StructureVillagePieces.PieceWeight> list = StructureVillagePieces.getStructureVillageWeightedPieceList(rand, size);
             for (StructureVillagePieces.PieceWeight piece : list) {
-                if (piece.villagePieceClass.)
+
             }
             StructureVillagePieces.Start structurevillagepieces$start = new StructureVillagePieces.Start(worldIn.getBiomeProvider(), 0, rand, (x << 4) + 2, (z << 4) + 2, list, size);
             this.components.add(structurevillagepieces$start);

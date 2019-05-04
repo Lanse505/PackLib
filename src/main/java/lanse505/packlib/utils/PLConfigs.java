@@ -4,7 +4,6 @@ import lanse505.packlib.PackLib;
 import net.minecraftforge.common.config.Config;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class PLConfigs {
