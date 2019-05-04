@@ -27,6 +27,10 @@ minecraft {
 
 repositories {
     maven {
+        name = 'Baubles'
+        url "https://maven.thiakil.com"
+    }
+    maven {
         name = "CurseForge"
         url = "https://minecraft.curseforge.com/api/maven/"
     }
@@ -63,6 +67,7 @@ dependencies {
 	deobfCompile "slimeknights:TConstruct:${minecraft_version}-${tinkers_version}"
     deobfCompile "slimeknights.mantle:Mantle:${mantle_minecraft_version}-${mantle_version}"
     deobfCompile "ore-excavation:OreExcavation:1.4.140"
+    deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
 }
 
 processResources {
