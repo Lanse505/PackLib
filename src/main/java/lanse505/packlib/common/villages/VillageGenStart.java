@@ -1,6 +1,7 @@
 package lanse505.packlib.common.villages;
 
-import lanse505.packlib.utils.PLConfigs;
+import lanse505.packlib.utils.config.PLConfigs;
+import lanse505.packlib.utils.config.PLConfigurations;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureComponent;
@@ -11,17 +12,20 @@ import java.util.List;
 import java.util.Random;
 
 public class VillageGenStart extends StructureStart {
-    /** well ... thats what it does */
+    /**
+     * well ... thats what it does
+     */
     private boolean hasMoreThanTwoComponents;
 
-    public VillageGenStart() {}
+    public VillageGenStart() {
+    }
 
     public VillageGenStart(World world, Random random, int x, int z, int size) {
         super(x, z);
         List<StructureVillagePieces.PieceWeight> list = StructureVillagePieces.getStructureVillageWeightedPieceList(random, size);
 
         for (StructureVillagePieces.PieceWeight piece : list) {
-            if (!PLConfigs.handler.get(piece.villagePieceClass.getName())) {
+            if (!PLConfigurations.handler.get(piece.villagePieceClass.getName())) {
                 list.remove(piece);
             }
         }

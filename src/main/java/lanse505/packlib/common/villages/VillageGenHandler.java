@@ -1,7 +1,8 @@
 package lanse505.packlib.common.villages;
 
 import lanse505.packlib.PackLib;
-import lanse505.packlib.utils.PLConfigs;
+import lanse505.packlib.utils.config.PLConfigs;
+import lanse505.packlib.utils.config.PLConfigurations;
 import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraft.world.gen.structure.StructureStart;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
@@ -13,18 +14,17 @@ import java.util.Map;
 
 public class VillageGenHandler {
     private static Map<String, String> villageValues = new HashMap<>();
-
-    static {
-        villageValues.put("size", String.valueOf(PLConfigs.size));
-        villageValues.put("distance", String.valueOf(PLConfigs.distance));
-    }
-
     private static MapGenVillage villageGenerator = new MapGenVillage(villageValues) {
         @Override
         protected StructureStart getStructureStart(int chunkX, int chunkZ) {
-            return new VillageGenStart(this.world, this.rand, chunkX, chunkZ, PLConfigs.size);
+            return new VillageGenStart(this.world, this.rand, chunkX, chunkZ, PLConfigurations.size);
         }
     };
+
+    static {
+        villageValues.put("size", String.valueOf(PLConfigurations.size));
+        villageValues.put("distance", String.valueOf(PLConfigurations.distance));
+    }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onVillageGen(InitMapGenEvent event) {

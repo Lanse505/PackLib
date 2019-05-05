@@ -12,8 +12,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Random;
 
 @Mod(modid = PackLib.MODID, name = PackLib.NAME, version = PackLib.VERSION)
-public class PackLib
-{
+public class PackLib {
     public static final String MODID = "packlib";
     public static final String NAME = "PackLib";
     public static final String VERSION = "1.0.0";
