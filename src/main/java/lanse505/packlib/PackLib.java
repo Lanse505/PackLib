@@ -1,9 +1,6 @@
 package lanse505.packlib;
 
-import lanse505.packlib.common.villages.VillageGenHandler;
 import lanse505.packlib.proxy.CommonProxy;
-import lanse505.packlib.utils.PLConfigs;
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;

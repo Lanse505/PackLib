@@ -3,7 +3,6 @@ package lanse505.packlib.common.villages;
 import lanse505.packlib.utils.PLConfigs;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
 import net.minecraft.world.gen.structure.StructureVillagePieces;
@@ -22,7 +21,7 @@ public class VillageGenStart extends StructureStart {
         List<StructureVillagePieces.PieceWeight> list = StructureVillagePieces.getStructureVillageWeightedPieceList(random, size);
 
         for (StructureVillagePieces.PieceWeight piece : list) {
-            if (!PLConfigs.PLConfig.villageValues.handler.get(piece.villagePieceClass.getName())) {
+            if (!PLConfigs.handler.get(piece.villagePieceClass.getName())) {
                 list.remove(piece);
             }
         }

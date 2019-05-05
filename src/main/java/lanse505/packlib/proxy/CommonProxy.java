@@ -1,8 +1,6 @@
 package lanse505.packlib.proxy;
 
-import lanse505.packlib.utils.PLConfigsNew;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraftforge.common.config.Config;
+import lanse505.packlib.utils.PLConfigs;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -19,10 +17,10 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent event) {
-        PLConfigsNew.readConfigInit();
+        PLConfigs.readConfigInit();
     }
 
     public void postInit(FMLPostInitializationEvent event) {
-        PLConfigsNew.readConfigPostInit();
+        PLConfigs.readConfigPostInit();
     }
 }

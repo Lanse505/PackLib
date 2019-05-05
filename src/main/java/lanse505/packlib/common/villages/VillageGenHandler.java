@@ -2,33 +2,27 @@ package lanse505.packlib.common.villages;
 
 import lanse505.packlib.PackLib;
 import lanse505.packlib.utils.PLConfigs;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.MapGenVillage;
-import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
-import net.minecraft.world.gen.structure.StructureVillagePieces;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 public class VillageGenHandler {
     private static Map<String, String> villageValues = new HashMap<>();
 
     static {
-        villageValues.put("size", String.valueOf(PLConfigs.PLConfig.villageValues.size));
-        villageValues.put("distance", String.valueOf(PLConfigs.PLConfig.villageValues.distance));
+        villageValues.put("size", String.valueOf(PLConfigs.size));
+        villageValues.put("distance", String.valueOf(PLConfigs.distance));
     }
 
-    MapGenVillage villageGenerator = new MapGenVillage(villageValues) {
+    private static MapGenVillage villageGenerator = new MapGenVillage(villageValues) {
         @Override
         protected StructureStart getStructureStart(int chunkX, int chunkZ) {
-            return new VillageGenStart(this.world, this.rand, chunkX, chunkZ, PLConfigs.PLConfig.villageValues.size);
+            return new VillageGenStart(this.world, this.rand, chunkX, chunkZ, PLConfigs.size);
         }
     };
 
