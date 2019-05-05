@@ -9,12 +9,7 @@ import java.util.*;
 public class PLConfigs {
 
 
-    public static void whitelistPopulate() {
-        List<StructureVillagePieces.PieceWeight> list = StructureVillagePieces.getStructureVillageWeightedPieceList(PackLib.random, PLConfig.villageValues.size);
-        for (StructureVillagePieces.PieceWeight weight : list) {
-            PLConfig.villageValues.handler.put(weight.villagePieceClass.getName(), true);
-        }
-    }
+
 
     @Config(modid = PackLib.MODID, name = PackLib.NAME, type = Config.Type.INSTANCE)
     public static class PLConfig {
